@@ -1,0 +1,30 @@
+for i in {1..5}; do 
+  al="."
+  cmd=""
+  for ((j=0; j<$i; j++)); do 
+    al="${al}."
+    cmd="${cmd}../" 
+  done
+  alias $al="cd $cmd"
+done
+
+# -----------------------
+# Colors and shortcuts
+# -----------------------
+
+
+alias ~="cd ~"
+alias ls='ls --color=always'
+alias ll='ls -l --color=always'
+alias la='ls -l -A --color=always'
+
+alias reload='source ~/.bashrc'
+alias res1='xrandr --output default --mode 1280x720'
+alias res3='xrandr --output default --mode 2560x1440'
+alias res4='xrandr --output default --mode 3840x2160'
+alias res2='xrandr --output default --mode 2560x1200'
+
+#alias killme='pkill -u username'
+alias gitclean='git fetch -p ; git branch -r | awk '"'"'{print $1}'"'"' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '"'"'{print $1}'"'"' | xargs git branch -d'
+alias pruneme='git submodule foreach --recursive '"'"'git fetch --prune'"'"''
+alias foldersize='du -sh --block-size=M .'
