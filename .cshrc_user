@@ -1,0 +1,5 @@
+set prompt="%{\e[32;1m%}%n%{\e[37m%}@%{\e[33m%}%m%{\e[37m%}:%{\e[36m%}%~%{\e[37m%}"\$"%{\e[0m%} "
+
+alias ll 'ls -l --color=always'
+alias la 'ls -l -A --color=always'
+alias lad 'ls -lt -A --color=always'
